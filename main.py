@@ -10,8 +10,6 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-
-# connects /kangaroos path to render kangaroos.html
 @app.route('/kangaroos/')
 def kangaroos():
     return render_template("kangaroos.html")
@@ -28,9 +26,18 @@ def hawkers():
 
 
 @app.route('/stub/')
-def stub():
+def Stub():
     return render_template("stub.html")
 
+@app.route('/Reem', methods=['GET', 'POST'])
+def Reem():
+    # submit button has been pushed
+    if request.form:
+        name = request.form.get("name")
+        if len(name) != 0:  # input field has content
+            return render_template("Reem.html", name=name)
+    # starting and empty input default
+    return render_template("Reem.html", name="World")
 
 @app.route('/ethangreet', methods=['GET', 'POST'])
 def greet():
