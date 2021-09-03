@@ -29,8 +29,8 @@ def hawkers():
 def Stub():
     return render_template("stub.html")
 
-@app.route('/zachary_greet', methods=['GET', 'POST'])
-def zachary_greet():
+@app.route('/zachgreet', methods=['GET', 'POST'])
+def zachgreet():
     # submit button has been pushed
     if request.form:
         name = request.form.get("name")
