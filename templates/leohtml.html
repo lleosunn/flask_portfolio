@@ -1,28 +1,33 @@
 <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
 
+
     <div class="col-12">
         <p>Hello, {{name}}!</p>
     </div>
-    <!-- test -->
+
+
     <div class="col-12">
-        <form action="/ethangreet" id="greet" method="POST" >
+        <form action="/leogreet" id="greet" method="POST" >
             <label for="name">Type a greeting name?</label>
             <input name="name" id="name">
             <input type="submit" value="Greetings!">
         </form>
     </div>
 
+
     <div class="col-12">
         <img src="/static/assets/PythonFlask.jpeg" style="height: 400px" >
     </div>
 
+
 </div>
+
 
 <!-- display code from GitHub -->
 <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
 
     <div class="col-8">
-        <p>Jinja2 pre-processor code.  This code shows a variable name within double curly/squiggly brackets, or the variable syntax of Jinja2.  The variable is replaced with the value before the HTML is given to the browser by Flask/Jinja2 (a pre-processor means a step before code is transferred to another tool or engine.</p>
+        <p style="color:white">Jinja2 pre-processor code.  This code shows a variable name within double curly/squiggly brackets, or the variable syntax of Jinja2.  The variable is replaced with the value before the HTML is given to the browser by Flask/Jinja2 (a pre-processor means a step before code is transferred to another tool or engine.</p>
         <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L8-L8&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
     </div>
 
@@ -41,3 +46,19 @@
         <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fnighthawkcoders%2Fnighthawk_csp%2Fblob%2Fmaster%2Ftemplates%2Fgreet.html%23L5-L23&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
     </div>
 </div>
+<script src="{{ url_for('static', filename='three.r119.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vanta.birds.min.js') }}"></script>
+<script>
+    VANTA.BIRDS({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+    })
+</script>
+
+

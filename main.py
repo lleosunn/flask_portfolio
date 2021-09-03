@@ -30,7 +30,7 @@ def Stub():
     return render_template("stub.html")
 
 @app.route('/zachary_greet', methods=['GET', 'POST'])
-def greet():
+def zachary_greet():
     # submit button has been pushed
     if request.form:
         name = request.form.get("name")
@@ -40,7 +40,7 @@ def greet():
     return render_template("zachary_greet.html", name="World")
 
 @app.route('/ethangreet', methods=['GET', 'POST'])
-def greet():
+def ethangreet():
     # submit button has been pushed
     if request.form:
         name = request.form.get("name")
@@ -48,6 +48,16 @@ def greet():
             return render_template("ethangreet.html", name=name)
     # starting and empty input default
     return render_template("ethangreet.html", name="World")
+
+@app.route('/leogreet', methods=['GET', 'POST'])
+def leogreet():
+    # submit button has been pushed
+    if request.form:
+        name = request.form.get("name")
+        if len(name) != 0:  # input field has content
+            return render_template("leohtml.html", name=name)
+    # starting and empty input default
+    return render_template("leohtml.html", name="World")
 
 
 # runs the application on the development server
