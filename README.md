@@ -9,7 +9,7 @@ Have a bar on top with a home page, about page, and a drop down bar. The top bar
 To list our games, the top bar will have a drop down menu. This menu wil have the lists of all of our games; dino game, pong, minesweeper, tictactoe, and snakegame.
 
 ### Individual Scoring
-Ethan: 4/4
-Re'em: 4/4
-Leo: 4/4
-Zach: 4/4
+Ethan: 8/8
+Re'em: 8/8
+Leo: 8/8
+Zach: 8/8
