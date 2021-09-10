@@ -60,6 +60,10 @@ def reem():
 def video():
     return render_template("Mini-labs.html")
 
+@app.route('/binary/')
+def binary():
+    return render_template("binary.html")
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
