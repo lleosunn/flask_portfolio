@@ -56,9 +56,13 @@ def reem():
     # starting and empty input default
     return render_template("reem.html", name="World")
 
-@app.route('/video/')
+@app.route('/Mini-labs/')
 def video():
-    return render_template("video.html")
+    return render_template("Mini-labs.html")
+
+@app.route('/binary/')
+def binary():
+    return render_template("binary.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
