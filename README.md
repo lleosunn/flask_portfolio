@@ -14,25 +14,25 @@ Re'em: 8/8
 Leo: 8/8
 Zach: 8/8
 
-Contributors: 
+Contributors: https://github.com/lleosunn/flask_portfolio/graphs/contributors
 
-Scrum Board: 
+Scrum Board: https://github.com/lleosunn/flask_portfolio/projects/1
 
 ## Journals
 ----------
 | Names            | Journal                                                                                                      |
 | ---------------- | ------------------------------------------------------------------------------------------------------------ |
-| Ethan and Re'em  |  |
-| Leo and Zach     |  |
+| Ethan and Re'em  | https://docs.google.com/document/d/1iAwilFmq8pMATKJHm1rtc5YyC8sE1-5F0hRiEAwe8rA/edit |
+| Leo and Zach     | https://docs.google.com/document/d/1f1y1GudgUGWNHNWUNxCWraKD7N-t4TwVtlTqDh0q5u0/edit?usp=sharing |
 
 ## Teammates
 ---------------------------------------
 | Name             | Profile              | Scrumboard                                                              | Issues |Commits  |
 | ---------------- | --------------- | ---------------------------------------------------------------------------- | ------ |----------- | 
-| Ethan |
-| Re'em |
-| Leo |
-| Zach |
+| Ethan |@Ethan-Gravin25|https://github.com/lleosunn/flask_portfolio/projects/1 | https://github.com/lleosunn/flask_portfolio/issues |https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main |
+| Reem |@Reem57|https://github.com/lleosunn/flask_portfolio/projects/1 | https://github.com/lleosunn/flask_portfolio/issues | https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main |
+| Leo |@lleosunn|https://github.com/lleosunn/flask_portfolio/projects/1 | https://github.com/lleosunn/flask_portfolio/issues |https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main |
+| Zach |@zachye111|https://github.com/lleosunn/flask_portfolio/projects/1 | https://github.com/lleosunn/flask_portfolio/issues |https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main |
 
 
 ## Assignments
