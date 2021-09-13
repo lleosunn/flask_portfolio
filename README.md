@@ -29,7 +29,7 @@ Scrum Board: https://github.com/lleosunn/flask_portfolio/projects/1
 ---------------------------------------
 | Name             | Profile              | Scrumboard                                                              | Issues |Commits  |
 | ---------------- | --------------- | ---------------------------------------------------------------------------- | ------ |----------- | 
-| Ethan |@Ethan-Gravin25| [Scrumboard]  (https://github.com/lleosunn/flask_portfolio/projects/1)| https://github.com/lleosunn/flask_portfolio/issues |https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main |
+| Ethan |@Ethan-Gravin25| [Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1)| https://github.com/lleosunn/flask_portfolio/issues |https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main |
 | Reem |@Reem57|https://github.com/lleosunn/flask_portfolio/projects/1 | https://github.com/lleosunn/flask_portfolio/issues | https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main |
 | Leo |@lleosunn|https://github.com/lleosunn/flask_portfolio/projects/1 | https://github.com/lleosunn/flask_portfolio/issues |https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main |
 | Zach |@zachye111|https://github.com/lleosunn/flask_portfolio/projects/1 | https://github.com/lleosunn/flask_portfolio/issues |https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main |
