@@ -1,24 +1,36 @@
 <!-- Navigation Bar from bootstrap
 This HTML is setup as a fragment allowing it to be "included" by other HTML files via Jinja2
 -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="https://csp.nighthawkcodingsociety.com/">{{name}}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
-            <a class="nav-link" href={{ url_for('index') }}>Portfolio</a>
-            <!-- stub is shown using the name of the route -->
-            <a class="nav-link" href="/Mini-labs/">Mini Labs</a>
-            <a class="nav-link" href={{ url_for('binary') }}>Binary Mini Lab</a>
-            <a class="nav-link" href="/stub">Stub</a>
-            <a class="nav-link" href={{ url_for('zachgreet') }}>Zachary's Greet</a>
-            <a class="nav-link" href="/ethangreet">Ethan's Greet</a>
-            <a class="nav-link" href="/reem">Reem's Greet</a>
-            <a class="nav-link" href={{ url_for('leogreet') }}>Leo's Greet</a>
-            <a class="nav-link" href="/about_us">About Us</a>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="https://csp.nighthawkcodingsociety.com/">{{name}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <!-- url_for is a Jinja2 pre-processor that finds route from function name (def) -->
+                <a class="nav-link" href={{ url_for('index') }}>Portfolio</a>
+                <!-- stub is shown using the name of the route -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <!--root menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarStarters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Mini Labs
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/Mini-labs/">Team Video</a>
+                                <a class="dropdown-item" href={{ url_for('binary') }}>Binary Mini Lab</a>
+                                <a class="dropdown-item" href="/stub">Stub</a>
+                                <a class="dropdown-item" href={{ url_for('zachgreet') }}>Zachary's Greet</a>
+                                <a class="dropdown-item" href="/ethangreet">Ethan's Greet</a>
+                                <a class="dropdown-item" href="/reem">Reem's Greet</a>
+                                <a class="dropdown-item" href={{ url_for('leogreet') }}>Leo's Greet</a>
+                            </div>
+                        </li>
+                </div>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</body>
