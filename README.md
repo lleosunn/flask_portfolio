@@ -33,12 +33,3 @@ Scrum Board: https://github.com/lleosunn/flask_portfolio/projects/1
 | Reem |@Reem57|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) | [Issues](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
 | Leo |@lleosunn|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Issues](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
 | Zach |@zachye111|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Issues](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
-
-
-## Assignments
----------------------------------------
-| Week Number   | Assignment link                                              |
-| ------------- | -------------------------------------------------------------| 
-| Sprint 3,4    |                                            |
-| Sprint 2      | | 
-| Sprint 1      |          |
