@@ -1,0 +1,40 @@
+
+<!-- Extending the predefined project layout -->
+{% extends "layouts/base.html" %}
+{% set project = "About Us" %}
+
+<!- This variable sets name of browser tab  -->
+{% set project = "About Us" %}
+
+<!- This is a replacement block for Body in base.html -->
+{% block body %}
+<div class="col-0" style="margin: 3% 5% 2%" name="imgbox" id="imgbox;>
+    <iframe width="1920" height="1080">
+</iframe><br />
+
+<img src="/static/assets/Zach%20Photo.jpg" target="imgbox" width="21%" height="380" style="float:left"></a>
+<img src="/static/assets/Leo%20Sun.jpg" target="imgbox" width="21%" height="380" style="margin: 0% 3% 0%"></a>
+<img src="/static/assets/Ethan%20Picture.jpg" target="imgbox" width="21%" height="380"></a>
+<img src="/static/assets/Reem%20Picture.jpg" target="imgbox" width="21%" height="380"style="margin: 0% 3% 0%"></a>
+</div>
+<div>
+    <a class ="col-1" style="margin:0% 4% 0% ;font-size: 30px; color: pink">Zach Ye</a>
+    <a class ="col-1" style="margin:0% 8% 0% ;font-size: 30px; color: pink">Leo Sun</a>
+    <a class ="col-1" style="margin:0% 4.75% 0% ;font-size: 30px; color: pink">Ethan Gravin</a>
+    <a class ="col-1" style="margin:0% 3.5% 0% ;font-size: 30px; color: pink">Reem Ben Ishai</a>
+    <div>
+        <a class ="col-1" style="margin:0% 4% 0%">Age: 15</a>
+        <a class ="col-1" style="margin:0% 11.5% 0%">Age: 15</a>
+        <a class ="col-1" style="margin:0% 5% 0%">Age: 15</a>
+        <a class ="col-1" style="margin:0% 10.5% 0%">Age: 15</a>
+        <div>
+            <a class ="col-1" style="margin:0% 4% 0%">Fun Fact: Taller than Leo</a>
+            <a class ="col-1" style="margin:0% 4% 0%">Fun Fact: Taller than Zach</a>
+            <a class ="col-1" style="margin:0% 4% 0%">Fun Fact: Allergic to peanut butter</a>
+            <a class ="col-1" style="margin:0% -0.5% 0%">Fun Fact: Speaks 2 languages</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

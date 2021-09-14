@@ -64,6 +64,10 @@ def video():
 def binary():
     return render_template("binary.html")
 
+@app.route('/about_us/')
+def about_us():
+    return render_template("about_us.html")
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
