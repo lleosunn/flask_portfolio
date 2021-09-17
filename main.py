@@ -60,9 +60,13 @@ def reem():
 def video():
     return render_template("Mini-labs.html")
 
-@app.route('/binary/')
+@app.route('/binary/', methods = ['GET', 'POST'])
 def binary():
-    return render_template("binary.html")
+    BITS = 4
+    if request.method == 'POST':
+        BITS =  int(request.form['BITS'])
+    # starting and empty input default
+    return render_template("binary.html", BITS=BITS)
 
 @app.route('/about_us/')
 def about_us():
