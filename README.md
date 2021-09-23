@@ -19,14 +19,12 @@ Contributors: https://github.com/lleosunn/flask_portfolio/graphs/contributors
 Scrum Board: https://github.com/lleosunn/flask_portfolio/projects/1
 
 ## Journals
-----------
 | Names            | Journal                                                                                                      |
 | ---------------- | ------------------------------------------------------------------------------------------------------------ |
 | Ethan and Re'em  | https://docs.google.com/document/d/1iAwilFmq8pMATKJHm1rtc5YyC8sE1-5F0hRiEAwe8rA/edit |
 | Leo and Zach     | https://docs.google.com/document/d/1f1y1GudgUGWNHNWUNxCWraKD7N-t4TwVtlTqDh0q5u0/edit?usp=sharing |
 
 ## Teammates
----------------------------------------
 | Name             | Profile              | Scrumboard                                                              | Issues |Commits  |
 | ---------------- | --------------- | ---------------------------------------------------------------------------- | ------ |----------- | 
 | Ethan |@Ethan-Gravin25| [Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1)| [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Issues](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
