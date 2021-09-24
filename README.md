@@ -25,7 +25,7 @@ Evidence of everyone's [commits](https://github.com/nighthawkcoders/flask_portfo
 | Zach |@zachye111|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
 
 
-# Individual Scoring
+### Individual Scoring
 Ethan: 8/8
 Re'em: 8/8
 Leo: 8/8
