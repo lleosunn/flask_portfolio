@@ -1,6 +1,14 @@
 ## [Flask Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Flask%20Portfolio%20Starter)
 Runtime link: https://portfolio.nighthawkcodingsociety.com/
 
+## Contributors
+| Name             | Profile              | Scrumboard                                                              | Issues |Commit History |
+| ---------------- | --------------- | ---------------------------------------------------------------------------- | ------ |----------- | 
+| Ethan |@Ethan-Gravin25| [Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1)| [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
+| Reem |@Reem57|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) | [Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
+| Leo |@lleosunn|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
+| Zach |@zachye111|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
+
 ## Journals
 | Names            | Journal                                                                                                      |
 | ---------------- | ------------------------------------------------------------------------------------------------------------ |
@@ -17,12 +25,12 @@ Evidence of everyone's [commits](https://github.com/nighthawkcoders/flask_portfo
 [Video Journal](https://youtu.be/6B-EuOF2RMI)
 
 ## Sprint 3,4 week 3 (9/10)
-| Name             | Profile              | Scrumboard                                                              | Issues |Commit History |
-| ---------------- | --------------- | ---------------------------------------------------------------------------- | ------ |----------- | 
-| Ethan |@Ethan-Gravin25| [Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1)| [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
-| Reem |@Reem57|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) | [Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
-| Leo |@lleosunn|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
-| Zach |@zachye111|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
+| Name             | Score              | Evidence              |
+| ---------------- | --------------- | -------------------------|
+| Ethan |4/4| plans to use laptop at home and school|
+| Reem |4/4|plans to use laptop at home and school | 
+| Leo |4/4|plans to use laptop at home and school|
+| Zach |4/4|plans to use laptop at home and school|
 
 
 ### Individual Scoring
