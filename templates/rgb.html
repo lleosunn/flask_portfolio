@@ -2,14 +2,17 @@
 {% extends "layouts/layout.html" %}
 {% set msgimgColor = "Color" %}
 {% set msgimgGray = "Gray" %}
+{% set msgimgValue = "" %}
 {% block meta %}
 <script>
-    function changeImage() {
-        if (document.getElementById("img1").src == document.getElementById('img_orig1').innerHTML) {
-            document.getElementById('img1').src = document.getElementById('img_gray1').innerHTML;
+    function changeImage(ndx){
+        if (document.getElementById("img"+ndx).src == document.getElementById("img_orig"+ndx).innerHTML) {
+            document.getElementById("img"+ndx).src = document.getElementById("img_gray"+ndx).innerHTML;
+            document.getElementById("btn"+ndx).value = "Original"
         }
         else {
-            document.getElementById('img1').src = document.getElementById('img_orig1').innerHTML;
+            document.getElementById("img"+ndx).src = document.getElementById("img_orig"+ndx).innerHTML;
+            document.getElementById("btn"+ ndx).value = "Gray Scale"
         }
     }
     // Hack: add java script function to toggle image from original to gray and back (toggle)
@@ -51,12 +54,11 @@
                        {{image.base64_GRAY}}  gray scale image
                     -->
                     <div>
-                        <button type="button" id="myImage" onclick="changeImage()">Gray</button>
+                        <input type="button" id="btn{{loop.index}}" value="Gray Scale" onclick="changeImage('{{loop.index}}')">
                     </div>
 
 
                     <p hidden id="img_orig{{loop.index}}">{{image.base64}}</p>
-
                     <p hidden id="img_gray{{loop.index}}">{{image.base64_GRAY}}</p>
                 </td>
                 <td>
