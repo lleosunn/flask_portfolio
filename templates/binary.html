@@ -43,6 +43,11 @@
          DOM assignment by converting decimal https://www.w3schools.com/jsref/jsref_fromcharcode.asp
          below ASCII for more ideas of where to make changes
          */
+        document.getElementById('ascii').innerHTML = parseInt(binary, 2).toString(10);
+
+        unicode = String.fromCharCode(parseInt(binary,2));
+        document.getElementById('ascii').innerHTML = unicode;
+
     }
 
     // algorithm to convert decimal to base using division and remainder
@@ -172,7 +177,7 @@
         <div class="col-8">
             <form action="/binary/" method="post">
                 <label>Type the number of bits you want:</label>
-                <input type="text" name="BITS" value={{ BITS }}><br>
+                <input type="text" name="BITS" value={{ BITS }}>
                 <input type="submit" value="Submit">
             </form>
         </div>
@@ -186,6 +191,7 @@
                     <th>Octal</th>
                     <th>Hexadecimal</th>
                     <th>Decimal</th>
+                    <th>ascii/unicode</th>
                     <!-- Hack: display ASCII label for printable character(s)  -->
                     <th>Minus</th>
                     <th>Shift Right (/2)</th>
@@ -197,6 +203,7 @@
                     <td id="octal">0</td>
                     <td id="hexadecimal">0</td>
                     <td id="decimal">0</td>
+                    <td id="ascii">0</td>
                     <!-- Hack: display ASCII printable character(s)  -->
                     <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
                     <td><button type="button" id="divide2" onclick="divide(2)">/2</button></td>
