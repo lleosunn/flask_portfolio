@@ -88,6 +88,14 @@ def rgb():
 def binaryaddition():
     return render_template("binaryaddition.html")
 
+@app.route("/colorCode")
+def colorCode():
+    return render_template("colorCode.html")
+
+@app.route("/logicGates")
+def logicGates():
+    return render_template("logicGates.html")
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)

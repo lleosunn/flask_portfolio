@@ -13,16 +13,16 @@
         }
     }
 
-    function changeTextColor(text){
-        if (document.getElementById("btn"+text).src == document.getElementById("btn"+text).innerHTML) {
-
-            document.getElementById("btn"+text).value = "Original"
-        }
-        else {
-            d
-            document.getElementById("btn"+ text).value = "text"
-        }
-    }
+    // function changeTextColor(text){
+    //     if (document.getElementById("btn"+text).src == document.getElementById("btn"+text).innerHTML) {
+    //
+    //         document.getElementById("btn"+text).value = "Original"
+    //     }
+    //     else {
+    //         d
+    //         document.getElementById("btn"+ text).value = "text"
+    //     }
+    // }
     // Hack: add java script function to toggle image from original to gray and back (toggle)
     //  document.getElementById("img<n>").src
     //  document.getElementID("img_gray<n>").innerHTML
@@ -63,7 +63,7 @@
                     -->
                     <div>
                         <input type="button" id="btn{{loop.index}}" value="Gray Scale" onclick="changeImage('{{loop.index}}')">
-                        <input type="button" id="btn{{loop1.index}}" value="Text" onclick="changeTextColor('{{loop1.index}}')">
+<!--                        <input type="button" id="btn{{loop1.index}}" value="Text" onclick="changeTextColor('{{loop1.index}}')">-->
                     </div>
 
 
