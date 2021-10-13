@@ -1,8 +1,7 @@
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 import numpy
 import base64
 from io import BytesIO
-
 
 # image (PNG, JPG) to base64 conversion (string), learn about base64 on wikipedia https://en.wikipedia.org/wiki/Base64
 def image_base64(img, img_type):
@@ -20,8 +19,8 @@ def image_formatter(img, img_type):
 def image_data(path="static/img/", img_list=None):  # path of static images is defaulted
     if img_list is None:  # color_dict is defined with defaults
         img_list = [
-            {'source': "Peter Carolin", 'label': "Lassen Volcano", 'file': "lassen-volcano-256.jpg"},
-            #{'source': "iconsdb.com", 'label': "Black square", 'file': "black-square-16.png"},
+            {'source': "Peter Carolin", 'label': "Lassen Volcano", 'file': "lassen-volcano-256.jpg", 'color': (255,255,255)},
+            {'source': "iconsdb.com", 'label': "Black square", 'file': "Reem Picture.jpg", 'color': (255,255,255)}
             # {'source': "iconsdb.com", 'label': "Red square", 'file': "red-square-16.png"},
             # {'source': "iconsdb.com", 'label': "Green square", 'file': "green-square-16.png"},
             # {'source': "iconsdb.com", 'label': "Blue square", 'file': "blue-square-16.png"},
@@ -32,8 +31,11 @@ def image_data(path="static/img/", img_list=None):  # path of static images is d
     for img_dict in img_list:
         img_dict['path'] = '/' + path  # path for HTML access (frontend)
         file = path + img_dict['file']  # file with path for local access (backend)
+        img_reference = Image.open(file)
+        d1 = ImageDraw.Draw(img_reference)
+        font = ImageFont.truetype("arial.ttf", 300)
+        d1.text((28, 36), "Deez", fill=img_dict['color'], font=font)
         # Python Image Library operations
-        img_reference = Image.open(file)  # PIL
         img_data = img_reference.getdata()  # Reference https://www.geeksforgeeks.org/python-pil-image-getdata/
         img_dict['format'] = img_reference.format
         img_dict['mode'] = img_reference.mode

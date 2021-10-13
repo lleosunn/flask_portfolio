@@ -1,8 +1,9 @@
 # import "packages" from flask
 from flask import Flask, render_template, request
-from PIL import Image
 from flask import Blueprint, render_template
 from algorithms.image import image_data
+from pathlib import Path  # https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f
+
 
 # create a Flask instance
 app = Flask(__name__)
@@ -83,6 +84,17 @@ def wireframe():
 def rgb():
     return render_template('rgb.html', images=image_data())
 
+@app.route("/binaryaddition")
+def binaryaddition():
+    return render_template("binaryaddition.html")
+
+@app.route("/colorCode")
+def colorCode():
+    return render_template("colorCode.html")
+
+@app.route("/logicGates")
+def logicGates():
+    return render_template("logicGates.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
