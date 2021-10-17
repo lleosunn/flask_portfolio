@@ -49,6 +49,9 @@ def leogreet():
     # starting and empty input default
     return render_template("leohtml.html", name="World")
 
+@app.route('/logic_gates/')
+def logic():
+    return render_template('logic_gates.html')
 
 @app.route('/reem', methods=['GET', 'POST'])
 def reem():
@@ -84,10 +87,6 @@ def wireframe():
 def rgb():
     return render_template('rgb.html', images=image_data())
 
-@app.route("/binaryaddition")
-def binaryaddition():
-    return render_template("binaryaddition.html")
-
 @app.route("/colorCode")
 def colorCode():
     return render_template("colorCode.html")
@@ -95,6 +94,10 @@ def colorCode():
 @app.route("/logicGates")
 def logicGates():
     return render_template("logicGates.html")
+
+@app.route("/arcade")
+def arcade():
+    return render_template("arcade.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
