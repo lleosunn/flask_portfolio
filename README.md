@@ -15,7 +15,11 @@ Runtime link: https://portfolio.nighthawkcodingsociety.com/
 | Ethan and Re'em  | [Journal](https://docs.google.com/document/d/1iAwilFmq8pMATKJHm1rtc5YyC8sE1-5F0hRiEAwe8rA/edit) |
 | Leo and Zach     | [Journal](https://docs.google.com/document/d/1f1y1GudgUGWNHNWUNxCWraKD7N-t4TwVtlTqDh0q5u0/edit?usp=sharing) |
 
-## Sprint 5,6 week 5 (9/25)
+## Sprint 7,8 week 7 (10/12)
+Logic Gates: [code](https://github.com/lleosunn/flask_portfolio/tree/main/templates)
+Team Runtime Video: [video](https://youtu.be/EuGyd-wBFn0)
+
+## Sprint 5,6 week 5 and week 6 (9/25)
 RGB Project: [project](https://github.com/lleosunn/flask_portfolio/blob/main/templates/rgb.html)
 Live Grading with TO's and OO's: [grade](https://github.com/lleosunn/flask_portfolio/issues/46)
 
