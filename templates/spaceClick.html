@@ -1,0 +1,79 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Bar Clicker</title>
+</head>
+<style>
+    body{
+        background: #262626;
+        width: 99%;
+        height: 98vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .counter-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #counter {
+        font-size: 32px;
+        background: #eee;
+        min-width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        border-radius: 5px;
+        margin-right: 20px;
+    }
+
+    #reset {
+        background: firebrick;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    var counterWrapper = document.getElementById('counter')
+    var counterReset = document.getElementById('reset')
+    var counter = 0
+
+    document.addEventListener("keydown", (e) => {
+        if(e.keyCode === 32) {
+            counter++
+            counterWrapper.innerText = counter
+        }
+        else if(e.keyCode === 8) {
+            if(counter > 0) {
+                counter--
+                counterWrapper.innerText = counter
+            }
+        }
+    })
+
+    counterReset.addEventListener("click", () => {
+        counter = 0
+        counterWrapper.innerText = counter
+})
+</script>
+
+<body>
+<div class="counter-wrapper">
+    <div id="counter">0</div>
+    <span id="reset"><i class="fa fa-refresh"></i></span>
+</div>
+</body>
+</html>
