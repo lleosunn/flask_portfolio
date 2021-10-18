@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-{% extends "layouts/layout.html" %}
+{% extends "layouts/base.html" %}
 
 <!-- Search for all the Hack: below for hack-a-thon and mini-lab requirements -->
 <!-- need to adjust Templates to start -->
 
-<!-- Hack: Build form to drive bit size dynamic updates
+<!-- DONE Hack: Build form to drive bit size dynamic updates
            use HTML Input Form in Frontend, ie toward top of Page
            send initial value and updated values to form via Python render_template -->
-<!-- Hack: use 8 as default-->
+<!-- DONE Hack: use 8 as default -->
+
+{% set BITS = BITS %}
 {% set MAX = ((2 ** BITS) - 1) %}
 
 <!-- Hack: Set bulbs and pass as variables via Python render_template
@@ -42,12 +44,19 @@
         /* Hack: show ASCII printable character(s) for each 8 bits
          DOM assignment by converting decimal https://www.w3schools.com/jsref/jsref_fromcharcode.asp
          below ASCII for more ideas of where to make changes
+         /* Done Hack: show ASCII printable character(s) for each 8 bits
+         DOM assignment by converting decimal https://www.w3schools.com/jsref/jsref_fromcharcode.asp
+         below ASCII for more ideas of where to make changes
          */
-        document.getElementById('ascii').innerHTML = parseInt(binary, 2).toString(10);
+        let text = String.fromCharCode(parseInt(parseInt(binary, 2).toString(10)));
+        document.getElementById('ascii').innerHTML = text;    // set ascii in the table
 
-        unicode = String.fromCharCode(parseInt(binary,2));
-        document.getElementById('ascii').innerHTML = unicode;
+        while (hex.length < 4) {
+            hex = "0" + hex;
+        }
+        hex = "U+" + hex;
 
+        document.getElementById('unicode').innerHTML = hex.toUpperCase();
     }
 
     // algorithm to convert decimal to base using division and remainder
@@ -115,69 +124,17 @@
             }
         }
     }
-    function times(n) {
-        let binary = getBits();
-        // convert to decimal and do math
-        let decimal = parseInt(binary, 2);
-        if (n > 1) {  // multiply
-            decimal = MAX === decimal ? 0 : decimal *= n; // OVERFLOW or times
-        } else  {     // divide
-            decimal = 0 === decimal ? MAX : decimal /= n; // OVERFLOW or divide
-        }
-        // convert the result back to binary
-        binary = decimal_2_base(decimal, 2);
-        // update conversions
-        setConversions(binary);
-        // update bits
-        for (let i = 0; i < binary.length; i++) {
-            let digit = binary.substr(i, 1);
-            document.getElementById('digit' + i).value = digit;
-            if (digit === "1") {
-                document.getElementById('bulb' + i).src = "{{ imgBulbOn }}";
-                document.getElementById('butt' + i).innerHTML = "{{ msgTurnOff }}";
-            } else {
-                document.getElementById('bulb' + i).src = "{{ imgBulbOff }}";
-                document.getElementById('butt' + i).innerHTML = "{{ msgTurnOn }}";
-            }
-        }
-    }
-    function divide(n) {
-        let binary = getBits();
-        // convert to decimal and do math
-        let decimal = parseInt(binary, 2);
-        if (n > 1) {  // divide
-            decimal = MAX === decimal ? 0 : decimal /= n; // OVERFLOW or divide
-        } else  {     // times
-            decimal = 0 === decimal ? MAX : decimal *= n; // OVERFLOW or times
-        }
-        // convert the result back to binary
-        binary = decimal_2_base(decimal, 2);
-        // update conversions
-        setConversions(binary);
-        // update bits
-        for (let i = 0; i < binary.length; i++) {
-            let digit = binary.substr(i, 1);
-            document.getElementById('digit' + i).value = digit;
-            if (digit === "1") {
-                document.getElementById('bulb' + i).src = "{{ imgBulbOn }}";
-                document.getElementById('butt' + i).innerHTML = "{{ msgTurnOff }}";
-            } else {
-                document.getElementById('bulb' + i).src = "{{ imgBulbOff }}";
-                document.getElementById('butt' + i).innerHTML = "{{ msgTurnOn }}";
-            }
-        }
-    }
 </script>
 {% endblock %}
 
-{% block content %}
+{% block body %}
 <h1 class="text-center">Binary Math with Conversions</h1>
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-8">
             <form action="/binary/" method="post">
                 <label>Type the number of bits you want:</label>
-                <input type="text" name="BITS" value={{ BITS }}>
+                <input type="text" name="BITS" value={{ BITS }}><br>
                 <input type="submit" value="Submit">
             </form>
         </div>
@@ -185,29 +142,26 @@
         <div class="col-8">
             <table class="table">
                 <tr id="table">
-                    <th>Shift Left (*2)</th>
                     <th>Plus</th>
                     <th>Binary</th>
                     <th>Octal</th>
                     <th>Hexadecimal</th>
                     <th>Decimal</th>
-                    <th>ascii/unicode</th>
                     <!-- Hack: display ASCII label for printable character(s)  -->
+                    <th>ASCII</th>
+                    <th>Unicode</th>
                     <th>Minus</th>
-                    <th>Shift Right (/2)</th>
                 </tr>
                 <tr>
-                    <td><button type="button" id="multiply2" onclick="times(2)">*2</button></td>
                     <td><button type="button" id="add1" onclick="add(1)">+1</button></td>
                     <td id="binary">00000000</td>
                     <td id="octal">0</td>
                     <td id="hexadecimal">0</td>
                     <td id="decimal">0</td>
-                    <td id="ascii">0</td>
                     <!-- Hack: display ASCII printable character(s)  -->
+                    <td id="ascii">0</td>
+                    <td id="unicode">0</td>
                     <td><button type="button" id="sub1" onclick="add(-1)">-1</button></td>
-                    <td><button type="button" id="divide2" onclick="divide(2)">/2</button></td>
-
 
                 </tr>
             </table>
@@ -232,4 +186,213 @@
 
     </div>
 </div>
+    {% block content %}
+
+        <!-- Creates all of the toggleable bits and two bytes. Also creates the sum byte at the bottom -->
+        {% for j in range(3) %}
+
+            {% if j == 0 %}
+                <div class="row container-fluid">
+            {% else %}
+                <div class="row container-fluid mt-5">
+            {% endif %}
+
+        {% if j == 2 %}  <!-- i have no clue how to format jinja but we're gonna do it like this... looks super ugly still -->
+
+            <div class="col-sm-1"></div>
+            {% for i in range(1, 10) %}
+                <p class="col-sm-1 sumBit" id="sumBit{{i}}">0</p>
+            {% endfor %}
+            <div class="col-sm"></div>
+
+        {% else %}
+
+            <button class="col-sm-1 operatorButton" onclick="changeRow('{{j}}', 'multiply')">x2</button>
+            <div class="col-sm-1"></div>
+            {% for i in range(1, 9) %}
+                <button class="col-sm-1" id="bit{{j}}{{i}}" onclick="toggleSwitch('bit{{j}}{{i}}')">0</button>
+            {% endfor %}
+            <button class="col-sm-1 offset-sm-1 operatorButton" onclick="changeRow('{{j}}', 'divide')">÷2</button>
+
+        {% endif %}
+        </div>
+
+        {% endfor %}
+
+        <div class="center">
+            <!-- Table showing values -->
+            <table width="25%">
+                <tr>
+                    <th>Row 1</th>
+                    <th>Row 2</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td id="row1">0</td>
+                    <td id="row2">0</td>
+                    <td id="result">0</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="center mt-5">
+            <button class="operatorButton" onclick="reset()">Reset</button>
+        </div>
+
+        <script>
+
+            function toggleSwitch (id) {     // toggles button between on and off
+                const element = document.getElementById(id);
+                if (element.innerHTML == "1") {
+                    setBit(id, 0);
+                } else {
+                    setBit(id, 1);
+                }
+
+                addRows();
+
+            }
+
+            function reset () {   // function to reset all buttons back to off
+                for (var j = 0; j < 2; j++) {
+                    for (var i = 1; i <= 8; i++) {
+                        setBit("bit" + j + i, 0);
+                    }
+                }
+
+                for (var i = 1; i <= 9; i++) {  // resets results too
+                    const element = document.getElementById("sumBit" + i);
+                    element.innerHTML = "0";
+                }
+
+                calculateAllRows();
+            }
+
+            function setBit(id, number) { // sets the bit directly
+                const element = document.getElementById(id);
+                if (number == 1) {
+                    element.classList.add("buttonOn");
+                    element.classList.remove("buttonOff");
+                    element.innerHTML = "1";
+                } else {
+                    element.classList.add("buttonOff");
+                    element.classList.remove("buttonOn");
+                    element.innerHTML = "0";
+                }
+            }
+
+            function changeRow (row, operator) { // function that multiplies/divides the row by 2
+                let bitArr = returnRow(row);
+
+                if (operator == "divide") {
+                    if (bitArr[7] == 1)
+                        return; // check if last bit is 1 (if i divide that it wont be an integer)
+
+                    for (var i = 7; i >= 0; i--) {
+                        if (i == 0) {
+                            bitArr[0] = 0; // edgecase for leftmost bit
+                        } else {
+                            bitArr[i] = bitArr[i-1]; // push every bit to the right
+                        }
+                    }
+                } else {
+                    if (bitArr[0] == 1)
+                        return; // check if first bit is 1 (if i multiply im gonna overflow)
+                    for (var i = 0; i < 8; i++) {
+                        if (i == 7) {
+                            bitArr[7] = 0; // edgecase for rightmost bit
+                        } else {
+                            bitArr[i] = bitArr[i+1]; // push every bit to the left
+                        }
+                    }
+                }
+
+                for (var i = 1; i <= 8; i++) {  // set bits according to the new bitArr values
+                    if (bitArr[i-1] == 1) {
+                        setBit("bit" + row + i, 1);
+                    } else {
+                        setBit("bit" + row + i, 0);
+                    }
+                }
+                addRows();
+            }
+
+            function returnRow (row) { // get all bits and put them into an array
+                const prefix = "bit" + row;
+                let bitArr = [];
+                for (var i = 1; i <= 8; i++) {
+                    const element = document.getElementById(prefix + i);
+                    bitArr.push(parseInt(element.innerHTML));
+                }
+                return bitArr;
+            }
+
+            function addRows () { // add the rows together (unsigned)
+                let bitArr1 = returnRow(0);
+                let bitArr2 = returnRow(1);
+                let result = [0, 0, 0, 0, 0, 0, 0, 0, 0]; // arrays for the resulting 9 bits and the carryover (1 + 1 == 11; have to carry over the first 1)
+                let carry = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+                for (var i = 7; i >= 0; i--) {
+                    let sum = bitArr1[i] + bitArr2[i] + carry[i+1];
+                    switch (sum) {  // switch statement to break down each situation you could have
+                        case 0:  // sum gives 00
+                            result[i+1] = 0;
+                            break;
+                        case 1:  // sum gives 01
+                            result[i+1] = 1;
+                            break;
+                        case 2:  // sum gives 10
+                            result[i+1] = 0;
+                            carry[i] = 1;
+                            break;
+                        case 3:  // sum gives 11
+                            result[i+1] = 1;
+                            carry[i] = 1;
+                            break;
+                    }
+                }
+
+                result[0] = carry[0];
+
+                for (var i = 1; i < 10; i++) {  // set sum bits
+                    if (result[i-1] == 1) {
+                        setBit("sumBit" + i, 1);
+                    } else {
+                        setBit("sumBit" + i, 0);
+                    }
+                }
+
+                calculateAllRows();
+            }
+
+            function calculateRow (prefix, number) { // converts binary to decimal given a certain row
+                let sum = 0;
+                for (var i = 1; i <= number; i++) {
+                    let element = document.getElementById(prefix + i);  // could probably make this more efficient/nicer looking with the returnRow function....
+                    sum += Math.pow(2, number - i) * parseInt(element.innerHTML);
+                }
+                return sum;
+            }
+
+            function calculateAllRows () {  // calculates the decimal values of all rows using the calculateRow() function
+                let row1Sum = calculateRow("bit0", 8);
+                let row2Sum = calculateRow("bit1", 8);
+                let result = calculateRow("sumBit", 9);
+
+                const firstSum = document.getElementById("row1");
+                firstSum.innerHTML = row1Sum;
+
+                const secondSum = document.getElementById("row2");
+                secondSum.innerHTML = row2Sum;
+
+                const resultSum = document.getElementById("result");
+                resultSum.innerHTML = result;
+            }
+
+            window.onload = reset();  // init buttons
+
+        </script>
+
+    {% endblock %}
 {% endblock %}

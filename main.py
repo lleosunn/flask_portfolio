@@ -96,10 +96,6 @@ def colorCode():
 def logicGates():
     return render_template("logicGates.html")
 
-@app.route("/spaceClick")
-def spaceClick():
-    return render_template("spaceClick.html")
-
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)

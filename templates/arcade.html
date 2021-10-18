@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% extends "layouts/base.html" %}
+{% set project = "PB Arcade" %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PB Arcade</title>
+</head>
+{% block body %}
+
+
+<style>
+    /* Parent Container */
+    .content_img{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    /* Child Text Container */
+    .content_img div{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: black;
+        color: white;
+        margin-bottom: 5px;
+        font-family: sans-serif;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: visibility 0s, opacity 0.5s linear;
+        transition: visibility 0s, opacity 0.5s linear;
+    }
+
+    /* Hover on Parent Container */
+    .content_img:hover{
+        cursor: pointer;
+    }
+
+    .content_img:hover div{
+        width: 150px;
+        padding: 8px 15px;
+        visibility: visible;
+        opacity: 0.7;
+    }
+
+    #hoverclick1{
+        background: url('../static/assets/RESIZE2minecraft-preview.png') no-repeat;
+        cursor:pointer;
+        width:500px;
+        height:500px;
+    }
+
+    #hoverclick2{
+        background: url('../static/assets/RESIZE2hollowknight-review.jpg') no-repeat;
+        cursor:pointer;
+        width:500px;
+        height:500px;
+    }
+
+    #hoverclick3{
+        background: url('../static/assets/RESIZE2valorant-preview.jpg') no-repeat;
+        cursor:pointer;
+        width:500px;
+        height:500px;
+    }
+
+    #hoverclick4{
+        background: url('../static/assets/RESIZE2rocketleague-preview.jpg') no-repeat;
+        cursor:pointer;
+        width:500px;
+        height:500px;
+    }
+</style>
+
+<body>
+
+<div>
+    <h1 style="font-size:75px; text-align:center; font-family: gilroy,serif;">Peanutbutter Arcade</h1>
+    <h2 style="font-size:35px; text-align:center; font-family: gilroy,serif;">Review popular games and discover new favorites!</h2>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <input type="button" id="hoverclick1" onclick="location.href = 'reviewPageMinecraft';" style= "margin-top:10%">
+            </div>
+            <div class="col-sm-5">
+                <input type="button" id="hoverclick2" onclick="location.href = 'reviewPageHollowKnight';" style= "margin-top:8%; margin-left:60%">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <input type="button" id="hoverclick3" onclick="location.href = 'reviewPageValorant';" style= "margin-top:10%">
+            </div>
+            <div class="col-sm-5">
+                <input type="button" id="hoverclick4" onclick="location.href = 'reviewPageRocketLeague';" style= "margin-top:8%; margin-left:60%">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}
+</html>
