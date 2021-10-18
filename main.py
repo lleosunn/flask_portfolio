@@ -99,6 +99,22 @@ def logicGates():
 def arcade():
     return render_template("arcade.html")
 
+@app.route("/reviewPageMinecraft")
+def reviewPageMinecraft():
+    return render_template("reviewPageMinecraft.html")
+
+@app.route("/reviewPageValorant")
+def reviewPageValorant():
+    return render_template("reviewPageValorant.html")
+
+@app.route("/reviewPageHollowKnight")
+def reviewPageHollowKnight():
+    return render_template("reviewPageHollowKnight.html")
+
+@app.route("/reviewPageRocketLeague")
+def reviewPageRocketLeague():
+    return render_template("reviewPageRocketLeague.html")
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
