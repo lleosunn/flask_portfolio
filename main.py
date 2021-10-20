@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from flask import Blueprint, render_template
 from algorithms.image import image_data
 from pathlib import Path  # https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f
-
+import requests
 
 # create a Flask instance
 app = Flask(__name__)
@@ -99,6 +99,70 @@ def logicGates():
 @app.route("/spaceClick")
 def spaceClick():
     return render_template("spaceClick.html")
+
+@app.route("/arcade")
+def arcade():
+    return render_template("arcade.html")
+
+@app.route("/reviewPageHollowKnight")
+def reviewPageHollowKnight():
+    return render_template("reviewPageHollowKnight.html")
+
+@app.route("/reviewPageMinecraft")
+def reviewPageMinecraft():
+    return render_template("reviewPageMinecraft.html")
+
+@app.route("/reviewPageRocketLeague")
+def reviewPageRocketLeague():
+    return render_template("reviewPageRocketLeague.html")
+
+@app.route("/reviewPageValorant")
+def reviewPageValorant():
+    return render_template("reviewPageValorant.html")
+
+@app.route('/joke', methods=['GET', 'POST'])
+def joke():
+    """
+    # use this url to test on and make modification on you own machine
+    url = "http://127.0.0.1:5222/api/joke"
+    """
+    url = "https://csp.nighthawkcodingsociety.com/api/joke"
+    response = requests.request("GET", url)
+    return render_template("joke.html", joke=response.json())
+
+
+@app.route('/jokes', methods=['GET', 'POST'])
+def jokes():
+    """
+    # use this url to test on and make modification on you own machine
+    url = "http://127.0.0.1:5222/api/jokes"
+    """
+    url = "https://csp.nighthawkcodingsociety.com/api/jokes"
+
+    response = requests.request("GET", url)
+    return render_template("jokes.html", jokes=response.json())
+
+
+@app.route('/covid19', methods=['GET', 'POST'])
+def covid19():
+    url = "https://corona-virus-world-and-india-data.p.rapidapi.com/api"
+    headers = {
+        'x-rapidapi-key': "dec069b877msh0d9d0827664078cp1a18fajsn2afac35ae063",
+        'x-rapidapi-host': "corona-virus-world-and-india-data.p.rapidapi.com"
+    }
+
+    response = requests.request("GET", url, headers=headers)
+
+    """
+    # uncomment this code to test from terminal
+    world = response.json().get('world_total')
+    countries = response.json().get('countries_stat')
+    print(world['total_cases'])
+    for country in countries:
+        print(country["country_name"])
+    """
+
+    return render_template("covid19.html", stats=response.json())
 
 # runs the application on the development server
 if __name__ == "__main__":
