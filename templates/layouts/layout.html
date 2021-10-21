@@ -112,7 +112,7 @@
 
     <!-- Use this block for page specific meta data -->
     {% block meta %}
-    <title>Nighthawk Coding Society</title>
+    <title>Team PeanutButter</title>
     {% endblock %}
 
 </head>
@@ -139,13 +139,42 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="/Mini-labs/">Team Video</a>
+                            <a class="dropdown-item" href="/wireframe/">WireFrames</a>
+                            <a class="dropdown-item" href="/rgb">RGB</a>
                             <a class="dropdown-item" href={{ url_for('binary') }}>Binary Mini Lab</a>
                             <a class="dropdown-item" href="/stub">Stub</a>
+                            <a class="dropdown-item" href={{ url_for('binaryaddition') }}>Binary Addition</a>
+                            <a class="dropdown-item" href={{ url_for('colorCode') }}>Color Code</a>
+                            <a class="dropdown-item" href={{ url_for('logicGates') }}>Logic Gates</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarStarters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Greet Pages
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href={{ url_for('zachgreet') }}>Zachary's Greet</a>
                             <a class="dropdown-item" href="/ethangreet">Ethan's Greet</a>
                             <a class="dropdown-item" href="/reem">Reem's Greet</a>
                             <a class="dropdown-item" href={{ url_for('leogreet') }}>Leo's Greet</a>
-                            <a class="dropdown-item" href={{ url_for('binaryaddition') }}>binaryaddition</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarStarters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Our Games
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/spaceClick">Space Click</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarStarters" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            APIs
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/joke">Joke</a>
+                            <a class="dropdown-item" href="/jokes">Jokes</a>
+                            <a class="dropdown-item" href="/covid19">Covid-19</a>
                         </div>
                     </li>
                 </ul>
@@ -158,17 +187,5 @@
 {% block content %}
 {% endblock %}
 
-
-<div class="contact" style="height: 35vh;">
-
-    <div class="row justify-content-center" style="margin-top: 2%;">
-        <h3 style="color: var(--black); margin-top: 3%; font-size: 2vw;">Contact Us</h3>
-    </div>
-
-    <div class="row justify-content-center">
-        <h4><a href="mailto: nighthawkcodingsociety@gmail">nighthawkcodingsociety@gmail</a></h4>
-    </div>
-
-</div>
 </body>
 </html>
