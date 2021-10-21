@@ -100,6 +100,42 @@ def logicGates():
 def spaceClick():
     return render_template("spaceClick.html")
 
+@app.route("/arcade")
+def arcade():
+    return render_template("arcade.html")
+
+@app.route("/reviewPageHollowKnight")
+def reviewPageHollowKnight():
+    return render_template("reviewPageHollowKnight.html")
+
+@app.route("/reviewPageMinecraft")
+def reviewPageMinecraft():
+    return render_template("reviewPageMinecraft.html")
+
+@app.route("/reviewPageValorant")
+def reviewPageValorant():
+    return render_template("reviewPageValorant.html")
+
+@app.route("/reviewPageRocketLeague")
+def reviewPageRocketLeague():
+    return render_template("reviewPageRocketLeague.html")
+
+@app.route("/reviewPageAmongUs")
+def reviewPageAmongUs():
+    return render_template("reviewPageAmongUs.html")
+
+@app.route("/reviewPageFortnite")
+def reviewPageFortnite():
+    return render_template("reviewPageFortnite.html")
+
+@app.route("/reviewPageSeaOfThieves")
+def reviewPageSeaOfThieves():
+    return render_template("reviewPageSeaOfThieves.html")
+
+@app.route("/reviewPage2k21")
+def reviewPage2k21():
+    return render_template("reviewPage2k21.html")
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
