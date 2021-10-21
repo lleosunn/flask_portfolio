@@ -120,6 +120,22 @@ def reviewPageRocketLeague():
 def reviewPageValorant():
     return render_template("reviewPageValorant.html")
 
+@app.route("/reviewPageAmongUs")
+def reviewPageAmongUs():
+    return render_template("reviewPageAmongUs.html")
+
+@app.route("/reviewPageFortnite")
+def reviewPageFortnite():
+    return render_template("reviewPageFortnite.html")
+
+@app.route("/reviewPageSeaOfThieves")
+def reviewPageSeaOfThieves():
+    return render_template("reviewPageSeaOfThieves.html")
+
+@app.route("/reviewPage2k21")
+def reviewPage2k21():
+    return render_template("reviewPage2k21.html")
+
 @app.route('/joke', methods=['GET', 'POST'])
 def joke():
     """
@@ -163,6 +179,10 @@ def covid19():
     """
 
     return render_template("covid19.html", stats=response.json())
+
+@app.route("/tictactoe")
+def tictactoe():
+    return render_template("tictactoe.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
