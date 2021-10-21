@@ -180,6 +180,10 @@ def covid19():
 
     return render_template("covid19.html", stats=response.json())
 
+@app.route("/tictactoe")
+def tictactoe():
+    return render_template("tictactoe.html")
+
 # runs the application on the development server
 if __name__ == "__main__":
     app.run(debug=True)
