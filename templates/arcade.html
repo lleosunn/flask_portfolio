@@ -48,56 +48,56 @@
         opacity: 0.7;
     }
 
-    #hoverclick1{
+    .hoverclick1{
         background: url('../static/assets/RESIZE2minecraft-preview.png') no-repeat;
         cursor:pointer;
         width:500px;
         height:500px;
     }
 
-    #hoverclick2{
+    .hoverclick2{
         background: url('../static/assets/RESIZE2hollowknight-review.jpg') no-repeat;
         cursor:pointer;
         width:500px;
         height:500px;
     }
 
-    #hoverclick3{
+    .hoverclick3{
         background: url('../static/assets/RESIZE2valorant-preview.jpg') no-repeat;
         cursor:pointer;
         width:500px;
         height:500px;
     }
 
-    #hoverclick4{
+    .hoverclick4{
         background: url('../static/assets/RESIZE2rocketleague-preview.jpg') no-repeat;
         cursor:pointer;
         width:500px;
         height:500px;
     }
 
-    #hoverclick5{
+    .hoverclick5{
         background: url('../static/assets/RESIZEamongus-preview.png') no-repeat;
         cursor:pointer;
         width:500px;
         height:500px;
     }
 
-    #hoverclick6{
+    .hoverclick6{
         background: url('../static/assets/RESIZEfortnite-preview.jpg') no-repeat;
         cursor:pointer;
         width:500px;
         height:500px;
     }
 
-    #hoverclick7{
+    .hoverclick7{
         background: url('../static/assets/RESIZEseaofthieves-preview.jpg') no-repeat;
         cursor:pointer;
         width:500px;
         height:500px;
     }
 
-    #hoverclick8{
+    .hoverclick8{
         background: url('../static/assets/RESIZE2k21-preview.png') no-repeat;
         cursor:pointer;
         width:500px;
@@ -105,21 +105,36 @@
     }
 </style>
 
+<script>
+    let i = 1
+    function mature(){
+        while (i < 5) {
+            if (document.getElementById("mature" + i).innerHTML == "mature" + i) {
+                document.getElementById("mature" + i).style.display = "none";
+                document.getElementById("mature" + i).src = document.getElementById("nonmature" + i).innerHTML;
+                i++;
+            }
+        }
+    }
+
+</script>
+
 <body>
 
 <div>
     <h1 style="font-size:75px; text-align:center; font-family: gilroy,serif;">Peanutbutter Arcade</h1>
     <h2 style="font-size:35px; text-align:center; font-family: gilroy,serif;">Review popular games and discover new favorites!</h2>
+    <button style="margin-left:45%" onclick="mature()">Toggle 17+ Rated Games</button>
 </div>
 
 <div>
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <input type="button" id="hoverclick1" onclick="location.href = 'reviewPageMinecraft';" style= "margin-top:10%">
+                <input type="button" class="hoverclick1" onclick="location.href = 'reviewPageMinecraft';" style= "margin-top:10%">
             </div>
             <div class="col-sm-5">
-                <input type="button" id="hoverclick2" onclick="location.href = 'reviewPageHollowKnight';" style= "margin-top:8%; margin-left:60%">
+                <input type="button" class="hoverclick2" onclick="location.href = 'reviewPageHollowKnight';" style= "margin-top:8%; margin-left:60%">
             </div>
         </div>
     </div>
@@ -127,10 +142,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <input type="button" id="hoverclick3" onclick="location.href = 'reviewPageValorant';" style= "margin-top:10%">
+                <input type="button" id="mature1" class="hoverclick3" onclick="location.href = 'reviewPageValorant';" style= "margin-top:10%">
             </div>
             <div class="col-sm-5">
-                <input type="button" id="hoverclick4" onclick="location.href = 'reviewPageRocketLeague';" style= "margin-top:8%; margin-left:60%">
+                <input type="button" class="hoverclick4" onclick="location.href = 'reviewPageRocketLeague';" style= "margin-top:8%; margin-left:60%">
             </div>
         </div>
     </div>
@@ -138,10 +153,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <input type="button" id="hoverclick5" onclick="location.href = 'reviewPageAmongUs';" style= "margin-top:10%">
+                <input type="button" class="hoverclick5" onclick="location.href = 'reviewPageAmongUs';" style= "margin-top:10%">
             </div>
             <div class="col-sm-5">
-                <input type="button" id="hoverclick6" onclick="location.href = 'reviewPageFortnite';" style= "margin-top:8%; margin-left:60%">
+                <input type="button" id="mature2" class="hoverclick6" onclick="location.href = 'reviewPageFortnite';" style= "margin-top:8%; margin-left:60%">
             </div>
         </div>
     </div>
@@ -149,10 +164,10 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <input type="button" id="hoverclick7" onclick="location.href = 'reviewPageSeaOfThieves';" style= "margin-top:10%">
+                <input type="button" id="mature3" class="hoverclick7" onclick="location.href = 'reviewPageSeaOfThieves';" style= "margin-top:10%">
             </div>
             <div class="col-sm-5">
-                <input type="button" id="hoverclick8" onclick="location.href = 'reviewPage2k21';" style= "margin-top:8%; margin-left:60%">
+                <input type="button" class="hoverclick8" onclick="location.href = 'reviewPage2k21';" style= "margin-top:8%; margin-left:60%">
             </div>
         </div>
     </div>
