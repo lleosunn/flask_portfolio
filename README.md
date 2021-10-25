@@ -13,8 +13,8 @@ Runtime link: https://portfolio.nighthawkcodingsociety.com/
 | Name | Link                                                | Average Score |
 |------|-----------------------------------------------------|---------------|
 |Ethan |https://github.com/lleosunn/flask_portfolio/issues/60|               | 
-|Reem  |                                                     |               |
-|Zach  |                                                     |               |
+|Reem  |https://github.com/lleosunn/flask_portfolio/issues/63|               |
+|Zach  |https://github.com/lleosunn/flask_portfolio/issues/62|               |
 |Leo   |https://github.com/lleosunn/flask_portfolio/issues/61|               |
 
 ## Journals
