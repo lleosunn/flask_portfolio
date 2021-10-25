@@ -12,10 +12,10 @@ Runtime link: https://portfolio.nighthawkcodingsociety.com/
 ## Individual Final Videos
 | Name | Link                                                | Average Score |
 |------|-----------------------------------------------------|---------------|
-|Ethan |https://github.com/lleosunn/flask_portfolio/issues/60|               | 
-|Reem  |https://github.com/lleosunn/flask_portfolio/issues/63|               |
-|Zach  |https://github.com/lleosunn/flask_portfolio/issues/62|               |
-|Leo   |https://github.com/lleosunn/flask_portfolio/issues/61|               |
+|Ethan |https://github.com/lleosunn/flask_portfolio/issues/60| 5.58/6        | 
+|Reem  |https://github.com/lleosunn/flask_portfolio/issues/63|      5.67/6   |
+|Zach  |https://github.com/lleosunn/flask_portfolio/issues/62|    5.58/6     |
+|Leo   |https://github.com/lleosunn/flask_portfolio/issues/61|     5.5/6     |
 
 ## Journals
 | Names            | Journal                                                                                                      |
