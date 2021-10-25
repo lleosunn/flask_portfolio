@@ -15,7 +15,7 @@ Runtime link: https://portfolio.nighthawkcodingsociety.com/
 |Ethan |https://github.com/lleosunn/flask_portfolio/issues/60|               | 
 |Reem  |                                                     |               |
 |Zach  |                                                     |               |
-|Leo   |                                                     |               |
+|Leo   |https://github.com/lleosunn/flask_portfolio/issues/61|               |
 
 ## Journals
 | Names            | Journal                                                                                                      |
