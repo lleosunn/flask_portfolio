@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Number</title>
+</head>
+<script>
+    function guessTheNumber (){
+        var number = Math.floor(Math.random() * 100);
+        if (document.getElementById("submit")).src = document.getElementById("number").innerHTML){
+
+    }
+</script>
+<body>
+<div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
+    <div class="col-12">
+        <p>Guess the Number, {{number}}!</p>
+    </div>
+    <div class="col-12">
+        <form action="/guessTheNumber" id="number" method="POST" >
+            <label for="number">Type a number?</label>
+            <input name="number" id="number">
+            <input type="submit" value="Guess!">
+        </form>
+    </div>
+</div>
