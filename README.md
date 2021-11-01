@@ -9,6 +9,14 @@ Runtime link: https://portfolio.nighthawkcodingsociety.com/
 | Leo |@lleosunn|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
 | Zach |@zachye111|[Scrumboard](https://github.com/lleosunn/flask_portfolio/projects/1) | [Issues](https://github.com/lleosunn/flask_portfolio/issues) |[Commits](https://github.com/nighthawkcoders/flask_portfolio/compare/main...lleosunn:main) |
 
+## Individual Final Videos
+| Name | Link                                                | Average Score |
+|------|-----------------------------------------------------|---------------|
+|Ethan |https://github.com/lleosunn/flask_portfolio/issues/60| 5.58/6        | 
+|Reem  |https://github.com/lleosunn/flask_portfolio/issues/63|      5.67/6   |
+|Zach  |https://github.com/lleosunn/flask_portfolio/issues/62|    5.58/6     |
+|Leo   |https://github.com/lleosunn/flask_portfolio/issues/61|     5.5/6     |
+
 ## Journals
 | Names            | Journal                                                                                                      |
 | ---------------- | ------------------------------------------------------------------------------------------------------------ |
