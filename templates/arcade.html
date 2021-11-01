@@ -106,13 +106,31 @@
 </style>
 
 <script>
-    let i = 1
+    let i = 1;
+    let c = 0;
+    let p = 1;
     function mature(){
-        while (i < 5) {
-            if (document.getElementById("mature" + i).innerHTML == "mature" + i) {
-                document.getElementById("mature" + i).style.display = "none";
-                document.getElementById("mature" + i).src = document.getElementById("nonmature" + i).innerHTML;
+        c++;
+        while (c === 3) {
+            i--;
+            i--;
+            i--;
+            p--;
+            p--;
+            p--;
+            c--;
+            c--;
+        }
+        while (i < 4 && c === 1) {
+            if (document.getElementById("mature" + i).innerHTML = "mature" + i) {
+                document.getElementById("mature" + i).style.visibility = "hidden";
                 i++;
+            }
+        }
+        while (p < 4 && c === 2) {
+            if (document.getElementById("mature" + p).innerHTML = "mature" + p) {
+                document.getElementById("mature" + p).style.visibility = "visible";
+                p++;
             }
         }
     }
@@ -124,7 +142,7 @@
 <div>
     <h1 style="font-size:75px; text-align:center; font-family: gilroy,serif;">Peanutbutter Arcade</h1>
     <h2 style="font-size:35px; text-align:center; font-family: gilroy,serif;">Review popular games and discover new favorites!</h2>
-    <button style="margin-left:45%" onclick="mature()">Toggle 17+ Rated Games</button>
+    <button style="margin-left:45%" onclick="mature()" >Toggle 17+ Rated Games</button>
 </div>
 
 <div>
