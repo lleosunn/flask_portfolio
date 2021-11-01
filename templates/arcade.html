@@ -109,9 +109,8 @@
     let i = 1
     function mature(){
         while (i < 5) {
-            if (document.getElementById("mature" + i).innerHTML == "mature" + i) {
+            if (document.getElementById("mature" + i).innerHTML = "mature" + i) {
                 document.getElementById("mature" + i).style.display = "none";
-                document.getElementById("mature" + i).src = document.getElementById("nonmature" + i).innerHTML;
                 i++;
             }
         }

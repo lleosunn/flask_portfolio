@@ -192,9 +192,9 @@
         {% for j in range(3) %}
 
             {% if j == 0 %}
-                <div class="row container-fluid">
+                <div class="row container-fluid"></div>
             {% else %}
-                <div class="row container-fluid mt-5">
+                <div class="row container-fluid mt-5"></div>
             {% endif %}
 
         {% if j == 2 %}  <!-- i have no clue how to format jinja but we're gonna do it like this... looks super ugly still -->
@@ -215,7 +215,6 @@
             <button class="col-sm-1 offset-sm-1 operatorButton" onclick="changeRow('{{j}}', 'divide')">÷2</button>
 
         {% endif %}
-        </div>
 
         {% endfor %}
 
@@ -238,6 +237,3 @@
         <div class="center mt-5">
             <button class="operatorButton" onclick="reset()">Reset</button>
         </div>
-
-        <script>
-{% endblock %}

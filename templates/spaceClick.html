@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Space Clicker</title>
 </head>
 <style>
     body{
@@ -51,24 +51,25 @@
         justify-content: center;
         width: 90px;
         height: 90px;
+        border: none;
     }
 </style>
 <script>
     var counter = 0
     var i = 0
-    function changevalue(){
+    function changeValue(){
         document.getElementById("counter").innerHTML = i;
         i++
     }
     function reset(){
-        document.getElementById("counter").innerHTML = 0;
+        document.getElementById("counter").innerHTML = "0";
         i=0
     }
 
 </script>
 
 <body>
-<button type="button" class="numberValue" onclick="changevalue()">
+<button type="button" class="numberValue" onclick="changeValue()">
     <div class="counter-wrapper">
         <p id="counter">0</p>
         <button id="reset" onclick="reset()"></button>

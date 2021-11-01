@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends "layouts/layout.html" %}
+
+{% block content %}
+<style>
+    table, td, th {
+        border: 1px solid var(--dblue);
+    }
+    td, th {
+        text-align: center;
+    }
+
+</style>
+
+<div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
+    <!-- Title -->
+    <div class="col-12" style="text-align: center;">
+        <h1><strong>Arcade API</strong></h1>
+    </div>
+
+
+    <!-- Sequence -->
+
+    <div class="col-12" style="text-align: center; ">
+        <table style="margin: 2%">
+            <tr>
+                <th>Game number</th>
+                <th style="width: 125px;">Title</th>
+                <th >Short Description</th>
+                <th style="width: 125px;">Game URL</th>
+                <th style="width: 100px;">Genre</th>
+                <th style="width: 125px;">Platform</th>
+                <th>Publisher</th>
+                <th>Developer</th>
+                <th style="width: 100px;">Release Date</th>
+            </tr>
+            {% for game in Games %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{game['title']}}</td>
+                <td>{{game['short_description']}}</td>
+                <td><a href="{{game['game_url']}}">{{game['title']}}</a></td>
+                <td>{{game['genre']}}</td>
+                <td>{{game['platform']}}</td>
+                <td>{{game['publisher']}}</td>
+                <td>{{game['developer']}}</td>
+                <td>{{game['release_date']}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}
