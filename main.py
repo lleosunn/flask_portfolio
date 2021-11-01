@@ -4,7 +4,6 @@ from flask import Blueprint, render_template
 from algorithms.image import image_data
 from pathlib import Path  # https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f
 import requests
-import json
 
 # create a Flask instance
 app = Flask(__name__)
@@ -84,6 +83,10 @@ def wireframe():
 @app.route('/rgb/')
 def rgb():
     return render_template('rgb.html', images=image_data())
+
+@app.route("/binaryaddition")
+def binaryaddition():
+    return render_template("binaryaddition.html")
 
 @app.route("/colorCode")
 def colorCode():
@@ -166,32 +169,16 @@ def covid19():
 
     response = requests.request("GET", url, headers=headers)
 
-
+    """
+    # uncomment this code to test from terminal
     world = response.json().get('world_total')
     countries = response.json().get('countries_stat')
     print(world['total_cases'])
     for country in countries:
         print(country["country_name"])
-
+    """
 
     return render_template("covid19.html", stats=response.json())
-
-@app.route('/arcadeAPI', methods=['GET', 'POST'])
-def arcadeAPI():
-    url = "https://free-to-play-games-database.p.rapidapi.com/api/games"
-
-    querystring = {"sort-by":"alphabetical"}
-
-    headers = {
-        'x-rapidapi-host': "free-to-play-games-database.p.rapidapi.com",
-        'x-rapidapi-key': "810c60410fmshe6c6bf953125c9ep188957jsn0e6dd57091ec"
-    }
-
-    response = requests.request("GET", url, headers=headers, params=querystring)
-
-    output = json.loads(response.text)
-
-    return render_template("arcadeAPI.html", Games=output)
 
 @app.route("/tictactoe")
 def tictactoe():
