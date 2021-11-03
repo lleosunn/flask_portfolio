@@ -1,6 +1,9 @@
 ## [Flask Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Flask%20Portfolio%20Starter)
 Runtime link: https://portfolio.nighthawkcodingsociety.com/
 
+## Our Project
+Our project is a video game review site and arcade. In our website, you can go to our Peanutbutter Arcade to see review of our favorite and requested games. Our group is also developing a few games such as space bar clicker, guess the number, and others coming soon.
+
 ## Contributors
 | Name             | Profile              | Scrumboard                                                              | Issues |Commit History |
 | ---------------- | --------------- | ---------------------------------------------------------------------------- | ------ |----------- | 
