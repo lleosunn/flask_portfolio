@@ -4,6 +4,7 @@ from flask import Blueprint, render_template
 from algorithms.image import image_data
 from pathlib import Path  # https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f
 import requests
+import json
 
 # create a Flask instance
 app = Flask(__name__)
@@ -183,6 +184,33 @@ def covid19():
 @app.route("/tictactoe")
 def tictactoe():
     return render_template("tictactoe.html")
+
+@app.route('/arcadeAPI', methods=['GET', 'POST'])
+def arcadeAPI():
+    url = "https://free-to-play-games-database.p.rapidapi.com/api/games"
+
+    querystring = {"sort-by":"alphabetical"}
+
+    headers = {
+        'x-rapidapi-host': "free-to-play-games-database.p.rapidapi.com",
+        'x-rapidapi-key': "810c60410fmshe6c6bf953125c9ep188957jsn0e6dd57091ec"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    output = json.loads(response.text)
+
+    return render_template("arcadeAPI.html", Games=output)
+
+@app.route('/guessTheNumber', methods=['GET', 'POST'])
+def guessTheNumber():
+    # submit button has been pushed
+    if request.form:
+        number = request.form.get("number")
+        if len(number) != 0:  # input field has content
+            return render_template("guessTheNumber.html", number=number)
+    # starting and empty input default
+    return render_template("guessTheNumber.html", number="World")
 
 # runs the application on the development server
 if __name__ == "__main__":
