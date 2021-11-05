@@ -5,22 +5,36 @@
     <title>Guess the Number</title>
 </head>
 <script>
-    function guessTheNumber (){
-        var number = Math.floor(Math.random() * 100);
-        if (document.getElementById("submit")).src = document.getElementById("number").innerHTML){
-
+    var number = Math.floor(Math.random() * 101);
+    localStorage.setItem("number", number);
+    function guessTheNumber(){
+        var guess = document.getElementById("guess").value;
+        document.getElementById("myText").innerHTML = guess;
+        if (guess > localStorage.getItem("number")){
+            window.alert("Try a lower number");
+        }
+        if (guess < localStorage.getItem("number")){
+            window.alert("Try a higher number");
+        }
+        if (guess == localStorage.getItem("number")){
+            window.alert("you won!");
+        }
+        window.alert(localStorage.getItem("number"));
     }
 </script>
-<body>
-<div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
-    <div class="col-12">
-        <p>Guess the Number, {{number}}!</p>
+    <body>
+    <div class="center-block" style="margin: 2% 5% 5%; text-align:left; font-family: gilroy,serif;">
+        <div class="col-12">
+            <p>Guess the Number!</p>
+            <p>Your guess: <span id="myText"></span> </p>
+        </div>
+        <div class="col-12">
+            <form action="/guessTheNumber" method="POST" >
+                <label for="guess">Type a number?</label>
+                <input guess="guess" id="guess">
+                <button type="submit" onclick="guessTheNumber()">Guess!</button>
+            </form>
+        </div>
     </div>
-    <div class="col-12">
-        <form action="/guessTheNumber" id="number" method="POST" >
-            <label for="number">Type a number?</label>
-            <input name="number" id="number">
-            <input type="submit" value="Guess!">
-        </form>
-    </div>
-</div>
+    </body>
+</html>

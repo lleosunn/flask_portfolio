@@ -204,13 +204,7 @@ def arcadeAPI():
 
 @app.route('/guessTheNumber', methods=['GET', 'POST'])
 def guessTheNumber():
-    # submit button has been pushed
-    if request.form:
-        number = request.form.get("number")
-        if len(number) != 0:  # input field has content
-            return render_template("guessTheNumber.html", number=number)
-    # starting and empty input default
-    return render_template("guessTheNumber.html", number="World")
+    return render_template("guessTheNumber.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
