@@ -87,6 +87,5 @@ def covid19():
 
     return render_template("starter/covid19.html", stats=response.json())
 
-
 if __name__ == "__main__":
     print(random.choice(joke_list))
