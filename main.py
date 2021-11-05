@@ -137,6 +137,10 @@ def reviewPageSeaOfThieves():
 def reviewPage2k21():
     return render_template("reviewPage2k21.html")
 
+@app.route("/reviewPageHearthstone")
+def reviewPageHearthstone():
+    return render_template("reviewPageHearthstone.html")
+
 @app.route('/joke', methods=['GET', 'POST'])
 def joke():
     """
@@ -158,7 +162,6 @@ def jokes():
 
     response = requests.request("GET", url)
     return render_template("jokes.html", jokes=response.json())
-
 
 @app.route('/covid19', methods=['GET', 'POST'])
 def covid19():
@@ -213,6 +216,22 @@ def forniteAPI():
 
     return render_template("valorantAPI.html", Sidearms=output)
 
+@app.route('/hearthstoneapi', methods=['GET', 'POST'])
+def hearthstoneapi():
+
+    url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards"
+
+    headers = {
+    'x-rapidapi-host': "omgvamp-hearthstone-v1.p.rapidapi.com",
+    'x-rapidapi-key': "9222875d6amsh74b0c5c0e1248fep11845cjsncdbaced252cf"
+    }
+
+    response = requests.request("GET", url, headers=headers)
+
+    output = json.loads(response.text)
+
+    return render_template("hearthstoneapi.html", Info=output)
+
 @app.route("/tictactoe")
 def tictactoe():
     return render_template("tictactoe.html")
@@ -220,6 +239,16 @@ def tictactoe():
 @app.route("/gamequiz")
 def gamequiz():
     return render_template("gamequiz.html")
+
+@app.route('/guessTheNumber', methods=['GET', 'POST'])
+def guessTheNumber():
+    # submit button has been pushed
+    if request.form:
+        name = request.form.get("number")
+        if len(number) != 0:  # input field has content
+            return render_template("guessTheNumber.html", number=number)
+    # starting and empty input default
+    return render_template("guessTheNumber.html", number="World")
 
 # runs the application on the development server
 if __name__ == "__main__":

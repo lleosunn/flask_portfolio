@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% extends "layouts/layout.html" %}
+
+{% block content %}
+    <style>
+        table, td, th {
+            border: 1px solid var(--dblue);
+        }
+        td, th {
+            text-align: center;
+        }
+
+    </style>
+
+    <div class="center-block" style="margin: 2% 5% 5%; font-family: gilroy,serif;">
+        <!-- Title -->
+        <div class="col-12" style="text-align: center;">
+            <h1><strong>Hearthstone API</strong></h1>
+        </div>
+
+        <!-- Sequence -->
+
+        <div class="col-12" style="text-align: center; ">
+            <table style="margin-left:15%">
+                <tr>
+                    <th style="width: 125px;">Name</th>
+                    <th style="width: 125px;">Card Set</th>
+                    <th style="width: 125px;">Type</th>
+                    <th style="width: 125px;">Text</th>
+                    <th style="width: 125px;">Player Class</th>
+                </tr>
+                <tr>
+                    <td>{{Info['Classic'][0]['name']}}</td>
+                    <td>{{Info['Classic'][0]['cardSet']}} </td>
+                    <td>{{Info['Classic'][0]['type']}}</td>
+                    <td>{{Info['Classic'][0]['text']}}</td>
+                    <td>{{Info['Classic'][0]['playerClass']}}</td>
+                </tr>
+                <tr>
+                    <td>{{Info['Classic'][1]['name']}}</td>
+                    <td>{{Info['Classic'][1]['cardSet']}} </td>
+                    <td>{{Info['Classic'][1]['type']}}</td>
+                    <td>{{Info['Classic'][1]['text']}}</td>
+                    <td>{{Info['Classic'][1]['playerClass']}}</td>
+                </tr>
+                <tr>
+                    <td>{{Info['Classic'][2]['name']}}</td>
+                    <td>{{Info['Classic'][2]['cardSet']}} </td>
+                    <td>{{Info['Classic'][2]['type']}}</td>
+                    <td>{{Info['Classic'][2]['text']}}</td>
+                    <td>{{Info['Classic'][2]['playerClass']}}</td>
+                </tr>
+                <tr>
+                    <td>{{Info['Classic'][3]['name']}}</td>
+                    <td>{{Info['Classic'][3]['cardSet']}} </td>
+                    <td>{{Info['Classic'][3]['type']}}</td>
+                    <td>{{Info['Classic'][3]['text']}}</td>
+                    <td>{{Info['Classic'][3]['playerClass']}}</td>
+                </tr>
+                <tr>
+                    <td>{{Info['Classic'][4]['name']}}</td>
+                    <td>{{Info['Classic'][4]['cardSet']}} </td>
+                    <td>{{Info['Classic'][4]['type']}}</td>
+                    <td>{{Info['Classic'][4]['text']}}</td>
+                    <td>{{Info['Classic'][4]['playerClass']}}</td>
+                </tr>
+                <tr>
+                    <td>{{Info['Classic'][5]['name']}}</td>
+                    <td>{{Info['Classic'][5]['cardSet']}} </td>
+                    <td>{{Info['Classic'][5]['type']}}</td>
+                    <td>{{Info['Classic'][5]['text']}}</td>
+                    <td>{{Info['Classic'][5]['playerClass']}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}
