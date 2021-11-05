@@ -4,6 +4,7 @@ from flask import Blueprint, render_template
 from algorithms.image import image_data
 from pathlib import Path  # https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f
 import requests
+import json
 
 # create a Flask instance
 app = Flask(__name__)
@@ -180,9 +181,45 @@ def covid19():
 
     return render_template("covid19.html", stats=response.json())
 
+@app.route('/arcadeAPI', methods=['GET', 'POST'])
+def arcadeAPI():
+    url = "https://free-to-play-games-database.p.rapidapi.com/api/games"
+
+    querystring = {"sort-by":"alphabetical"}
+
+    headers = {
+        'x-rapidapi-host': "free-to-play-games-database.p.rapidapi.com",
+        'x-rapidapi-key': "810c60410fmshe6c6bf953125c9ep188957jsn0e6dd57091ec"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+    output = json.loads(response.text)
+
+    return render_template("arcadeAPI.html", Games=output)
+
+@app.route('/valorantAPI', methods=['GET', 'POST'])
+def forniteAPI():
+    url = "https://valorant-weapons.p.rapidapi.com/Sidearms"
+
+    headers = {
+        'x-rapidapi-host': "valorant-weapons.p.rapidapi.com",
+        'x-rapidapi-key': "f843e28f92mshd3de980258688f8p118a28jsn305a11f8326b"
+    }
+
+    response = requests.request("GET", url, headers=headers)
+
+    output = json.loads(response.text)
+
+    return render_template("valorantAPI.html", Sidearms=output)
+
 @app.route("/tictactoe")
 def tictactoe():
     return render_template("tictactoe.html")
+
+@app.route("/gamequiz")
+def gamequiz():
+    return render_template("gamequiz.html")
 
 # runs the application on the development server
 if __name__ == "__main__":
