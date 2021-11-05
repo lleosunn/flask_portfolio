@@ -1,10 +1,9 @@
 # import "packages" from flask
 from flask import Flask, render_template, request
 from flask import Blueprint, render_template
-from algorithms.image import image_data
 from pathlib import Path  # https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f
-import requests
 import json
+import requests
 
 # create a Flask instance
 app = Flask(__name__)
@@ -14,6 +13,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template("index.html")
+
 
 
 @app.route('/stub/')
@@ -64,6 +64,10 @@ def reem():
 @app.route('/Mini-labs/')
 def video():
     return render_template("Mini-labs.html")
+
+@app.route('/signedaddition/')
+def signedaddition():
+    return render_template("signedaddition.html")
 
 @app.route('/binary/', methods = ['GET', 'POST'])
 def binary():
@@ -239,6 +243,24 @@ def tictactoe():
 @app.route("/gamequiz")
 def gamequiz():
     return render_template("gamequiz.html")
+
+
+@app.route('/PokemonGo', methods=['GET', 'POST'])
+def PokemonGo():
+
+
+    url = "https://pokemon-go1.p.rapidapi.com/type_effectiveness.json"
+
+    headers = {
+        'x-rapidapi-host': "pokemon-go1.p.rapidapi.com",
+        'x-rapidapi-key': "e0ad7aa5d6msh9dce61ba4b05901p1b8266jsn87d4e268c462"
+    }
+
+    response = requests.request("GET", url, headers=headers)
+
+    print(response.text)
+    return render_template("pokemongoapi.html", stats=response.json())
+
 
 @app.route('/guessTheNumber', methods=['GET', 'POST'])
 def guessTheNumber():
