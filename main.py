@@ -145,6 +145,18 @@ def reviewPage2k21():
 def reviewPageHearthstone():
     return render_template("reviewPageHearthstone.html")
 
+@app.route("/reviewPagePokemon")
+def reviewPagePokemon():
+    return render_template("reviewPagePokemon.html")
+
+@app.route("/reviewPageGenshin")
+def reviewPageGenshin():
+    return render_template("reviewPageGenshin.html")
+
+@app.route("/reviewPageSmashBros")
+def reviewPageSmashBros():
+    return render_template("reviewPageSmashBros.html")
+
 @app.route('/joke', methods=['GET', 'POST'])
 def joke():
     """
@@ -244,9 +256,8 @@ def tictactoe():
 def gamequiz():
     return render_template("gamequiz.html")
 
-
-@app.route('/PokemonGo', methods=['GET', 'POST'])
-def PokemonGo():
+@app.route('/pokemongoapi', methods=['GET', 'POST'])
+def pokemongoapi():
 
 
     url = "https://pokemon-go1.p.rapidapi.com/type_effectiveness.json"
@@ -260,7 +271,6 @@ def PokemonGo():
 
     print(response.text)
     return render_template("pokemongoapi.html", stats=response.json())
-
 
 @app.route('/guessTheNumber', methods=['GET', 'POST'])
 def guessTheNumber():
