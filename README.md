@@ -2,7 +2,7 @@
 Runtime link: https://portfolio.nighthawkcodingsociety.com/
 
 ## Our Project
-Our project is a video game review site and arcade. In our website, you can go to our Peanutbutter Arcade to see review of our favorite and requested games. Our group is also developing a few games such as space bar clicker, guess the number, and others coming soon.
+Our project is a video game review site and arcade. In our website, you can go to our Peanutbutter Arcade to see review of our favorite and requested games. Our group is also developing a few games such as space bar clicker, guess the number, and others coming soon. Throughout our page, we have implemented things such as APIs to improve the quality of the site. Additionally, we have used css transitions to improve the aesthetic portion of the website.
 
 ## Contributors
 | Name             | Profile              | Scrumboard                                                              | Issues |Commit History |
